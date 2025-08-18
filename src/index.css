@@ -93,7 +93,7 @@ All colors MUST be HSL format for consistency.
 
   .dark {
     /* Dark Mode Education Hub Theme */
-    --background: 220 27% 8%;       /* Dark navy background */
+    --background: 220 27% 4%;       /* Darker navy background */
     --background-secondary: 217 91% 60%; /* Bright blue accent areas */
     --foreground: 220 9% 96%;       /* Light text */
     

@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
 import { DocumentCard } from "@/components/DocumentCard";
 import { PDFViewer } from "@/components/PDFViewer";
+import { Footer } from "@/components/Footer";
 import { mockDocuments } from "@/data/mockDocuments";
 import type { Document } from "@/components/DocumentCard";
 
@@ -193,6 +194,9 @@ const Index = () => {
         }}
         onDownload={handleDownloadDocument}
       />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
