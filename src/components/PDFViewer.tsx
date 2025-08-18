@@ -132,7 +132,7 @@ export const PDFViewer = ({ document, isOpen, onClose, onDownload }: PDFViewerPr
             }}
           >
             <PDFDocument
-              file={`/sample.pdf`} // Sample PDF for demo
+              file={`/Amazon Sheet.pdf`} // Sample PDF for demo
               onLoadSuccess={onDocumentLoadSuccess}
               className="border rounded-lg shadow-card"
             >

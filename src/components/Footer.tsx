@@ -23,8 +23,8 @@ export const Footer = () => {
                 <BookOpen className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h2 className="text-xl font-bold gradient-text">LearnScape</h2>
-                <p className="text-xs text-muted-foreground">Education Hub</p>
+                <h2 className="text-xl font-bold gradient-text">Education Hub</h2>
+                <p className="text-xs text-muted-foreground">One Stop</p>
               </div>
             </div>
             <p className="text-muted-foreground text-sm">
@@ -32,16 +32,16 @@ export const Footer = () => {
               and placement resources for academic excellence.
             </p>
             <div className="flex space-x-2">
-              <Button variant="ghost" size="icon" className="glass-card hover:bg-primary/10">
+              <Button variant="ghost" size="icon" className="glass-card hover:bg-blue-500">
                 <Facebook className="w-4 h-4" />
               </Button>
-              <Button variant="ghost" size="icon" className="glass-card hover:bg-primary/10">
+              <Button variant="ghost" size="icon" className="glass-card hover:bg-blue-500">
                 <Twitter className="w-4 h-4" />
               </Button>
-              <Button variant="ghost" size="icon" className="glass-card hover:bg-primary/10">
+              <Button variant="ghost" size="icon" className="glass-card hover:bg-blue-500">
                 <Instagram className="w-4 h-4" />
               </Button>
-              <Button variant="ghost" size="icon" className="glass-card hover:bg-primary/10">
+              <Button variant="ghost" size="icon" className="glass-card hover:bg-blue-500">
                 <Linkedin className="w-4 h-4" />
               </Button>
             </div>
@@ -107,31 +107,18 @@ export const Footer = () => {
             <div className="space-y-2 text-sm">
               <div className="flex items-center space-x-2 text-muted-foreground">
                 <Mail className="w-4 h-4 text-primary" />
-                <span>info@learnscape.edu</span>
+                <span>amitkumarhzb75@gmail.com</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground">
                 <Phone className="w-4 h-4 text-primary" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 9334571861</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span>123 Education St, Learning City</span>
+                <span>Indore, Madhya Pradesh</span>
               </div>
             </div>
             
-            <div className="space-y-2">
-              <h4 className="font-medium">Newsletter</h4>
-              <div className="flex space-x-2">
-                <Input 
-                  type="email" 
-                  placeholder="Your email" 
-                  className="glass-card text-sm"
-                />
-                <Button size="sm" className="bg-gradient-primary text-white">
-                  Subscribe
-                </Button>
-              </div>
-            </div>
           </motion.div>
         </div>
 
@@ -144,8 +131,8 @@ export const Footer = () => {
           className="mt-12 pt-8 border-t border-border/50 text-center"
         >
           <p className="text-sm text-muted-foreground">
-            © {currentYear} LearnScape Education Hub. All rights reserved. 
-            <span className="ml-2">Made with ❤️ for students worldwide</span>
+            © {currentYear} Education Hub. All rights reserved. 
+            <span className="ml-2">Made with ❤️ for students WorldWide</span>
           </p>
         </motion.div>
       </div>

@@ -4,10 +4,10 @@ import { ArrowRight, BookOpen, FileText, Users, Download } from "lucide-react";
 
 export const HeroSection = () => {
   const stats = [
-    { icon: FileText, label: "Documents", value: "500+" },
+    { icon: FileText, label: "Documents", value: "50+" },
     { icon: BookOpen, label: "Categories", value: "4" },
-    { icon: Users, label: "Students", value: "1K+" },
-    { icon: Download, label: "Downloads", value: "10K+" }
+    { icon: Users, label: "Students", value: "100+" },
+    { icon: Download, label: "Downloads", value: "1K+" }
   ];
 
   return (
@@ -58,7 +58,7 @@ export const HeroSection = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="glass-card hover:bg-primary/5 border-primary/30"
+              className="glass-card hover:bg-blue-500 border-primary/30"
             >
               <BookOpen className="mr-2 w-5 h-5" />
               Browse Categories

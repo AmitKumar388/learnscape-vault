@@ -54,8 +54,8 @@ export const Navigation = ({
               <BookOpen className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold gradient-text">LearnScape</h1>
-              <p className="text-xs text-muted-foreground">Education Hub</p>
+              <h1 className="text-xl font-bold gradient-text">Education Hub</h1>
+              <p className="text-xs text-muted-foreground">One Stop </p>
             </div>
           </motion.div>
 
