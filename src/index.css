@@ -2,41 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Education Hub Design System - Modern Glassmorphism Theme
+All colors MUST be HSL format for consistency.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    /* Education Hub Brand Colors */
+    --primary: 217 91% 60%;         /* Bright academic blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 217 91% 70%;   /* Lighter blue for hover states */
+    
+    --secondary: 262 83% 58%;       /* Academic purple */
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 262 83% 68%; /* Lighter purple */
+    
+    --accent: 176 100% 39%;         /* Teal accent for success states */
+    --accent-foreground: 0 0% 100%;
+    
+    --success: 142 76% 36%;         /* Green for positive feedback */
+    --success-foreground: 0 0% 100%;
+    
+    /* Glassmorphism Background System */
+    --background: 220 23% 97%;      /* Soft off-white */
+    --background-secondary: 217 32% 17%; /* Dark blue for contrast */
+    --foreground: 220 9% 12%;       /* Near black for text */
+    
+    /* Glass Card System */
+    --glass-bg: 0 0% 100% / 0.1;    /* Translucent white */
+    --glass-border: 0 0% 100% / 0.2; /* Subtle border */
+    --glass-shadow: 220 9% 12% / 0.1; /* Subtle shadow */
+    
+    --card: 0 0% 100% / 0.8;        /* Semi-transparent card */
+    --card-foreground: 220 9% 12%;
+    --card-hover: 0 0% 100% / 0.9;  /* Hover state */
+    
+    /* Navigation & UI Elements */
+    --nav-glass: 217 91% 60% / 0.1; /* Blue tinted glass */
+    --nav-border: 217 91% 60% / 0.2;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --popover-foreground: 220 9% 12%;
+    
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 13% 91%;
+    --input: 0 0% 100% / 0.8;       /* Glass input fields */
+    --ring: 217 91% 60%;            /* Focus ring matches primary */
+    
+    /* Border Radius System */
+    --radius: 0.75rem;              /* Larger radius for modern look */
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    
+    /* Gradient System */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(262 83% 58%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(217 91% 60%) 100%);
+    --gradient-bg: linear-gradient(135deg, hsl(217 91% 60% / 0.05) 0%, hsl(262 83% 58% / 0.05) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100% / 0.1) 0%, hsl(0 0% 100% / 0.05) 100%);
+    
+    /* Animation System */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Shadows for Depth */
+    --shadow-glass: 0 8px 32px hsl(220 9% 12% / 0.1);
+    --shadow-card: 0 4px 20px hsl(220 9% 12% / 0.08);
+    --shadow-hover: 0 8px 40px hsl(217 91% 60% / 0.15);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +92,49 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    /* Dark Mode Education Hub Theme */
+    --background: 220 27% 8%;       /* Dark navy background */
+    --background-secondary: 217 91% 60%; /* Bright blue accent areas */
+    --foreground: 220 9% 96%;       /* Light text */
+    
+    /* Dark Glass System */
+    --glass-bg: 220 9% 12% / 0.5;   /* Dark translucent */
+    --glass-border: 0 0% 100% / 0.1; /* Subtle light border */
+    --glass-shadow: 0 0% 0% / 0.3;   /* Deeper shadow */
+    
+    --card: 220 27% 12% / 0.8;      /* Dark glass cards */
+    --card-foreground: 220 9% 96%;
+    --card-hover: 220 27% 15% / 0.9;
+    
+    /* Navigation in Dark Mode */
+    --nav-glass: 220 27% 12% / 0.8;
+    --nav-border: 217 91% 60% / 0.3;
+    
+    --popover: 220 27% 12%;
+    --popover-foreground: 220 9% 96%;
+    
+    --muted: 220 27% 15%;
+    --muted-foreground: 220 9% 65%;
+    
+    --accent: 176 100% 39%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 27% 20%;
+    --input: 220 27% 12% / 0.8;
+    --ring: 217 91% 60%;
+    
+    /* Dark Mode Gradients */
+    --gradient-bg: linear-gradient(135deg, hsl(217 91% 60% / 0.1) 0%, hsl(262 83% 58% / 0.1) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220 27% 12% / 0.5) 0%, hsl(220 27% 15% / 0.3) 100%);
+    
+    /* Dark Shadows */
+    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.2);
+    --shadow-hover: 0 8px 40px hsl(217 91% 60% / 0.2);
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +152,85 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    background: var(--gradient-bg);
+    min-height: 100vh;
+  }
+
+  /* Glass morphism utilities */
+  .glass {
+    background: hsl(var(--glass-bg));
+    border: 1px solid hsl(var(--glass-border));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-glass);
+  }
+
+  .glass-card {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--glass-border));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+
+  .glass-card:hover {
+    background: hsl(var(--card-hover));
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  /* Gradient text utilities */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Animation utilities */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px hsl(217 91% 60% / 0.3);
+    }
+    to {
+      box-shadow: 0 0 30px hsl(217 91% 60% / 0.6);
+    }
+  }
+
+  /* Scroll bar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary));
   }
 }
