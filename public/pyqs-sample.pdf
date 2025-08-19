@@ -8,8 +8,8 @@ endobj
 2 0 obj
 <<
 /Type /Pages
-/Kids [3 0 R]
-/Count 1
+/Kids [3 0 R 4 0 R]
+/Count 2
 >>
 endobj
 3 0 obj
@@ -17,65 +17,148 @@ endobj
 /Type /Page
 /Parent 2 0 R
 /MediaBox [0 0 612 792]
-/Contents 4 0 R
+/Contents 5 0 R
 /Resources <<
 /Font <<
-/F1 5 0 R
+/F1 6 0 R
 >>
 >>
 >>
 endobj
 4 0 obj
 <<
-/Length 345
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 7 0 R
+/Resources <<
+/Font <<
+/F1 6 0 R
+>>
+>>
+>>
+endobj
+5 0 obj
+<<
+/Length 900
 >>
 stream
 BT
-/F1 16 Tf
+/F1 18 Tf
 50 720 Td
-(Database Management Systems - Previous Year Questions) Tj
+(Computer Science - Previous Year Questions) Tj
 0 -40 Td
-/F1 12 Tf
-(Year 2023 - Final Examination) Tj
+/F1 14 Tf
+(Semester: Spring 2023 | Subject: Data Structures) Tj
 0 -30 Td
-(Q1. Explain the ACID properties in database transactions.) Tj
+(Time: 3 hours | Maximum Marks: 100) Tj
+0 -50 Td
+/F1 12 Tf
+(Q1. [20 marks] Define and explain the following:) Tj
 0 -25 Td
-(Answer: ACID stands for Atomicity, Consistency, Isolation,) Tj
+(a\) What is the time complexity of searching in a binary search tree?) Tj
 0 -20 Td
-(and Durability. These are fundamental properties that) Tj
+(   Answer: O\(log n\) for balanced BST, O\(n\) for skewed BST) Tj
+0 -30 Td
+(b\) Explain the difference between stack and queue.) Tj
 0 -20 Td
-(guarantee reliable database transactions.) Tj
+(   Answer: Stack follows LIFO, Queue follows FIFO principle) Tj
 0 -40 Td
-(Q2. What is normalization? Explain 1NF, 2NF, and 3NF.) Tj
+(Q2. [25 marks] Algorithm Analysis) Tj
 0 -25 Td
-(Answer: Normalization is the process of organizing data) Tj
+(Write an algorithm to reverse a linked list and analyze its) Tj
 0 -20 Td
-(to reduce redundancy and improve data integrity.) Tj
+(time and space complexity.) Tj
+0 -30 Td
+(Solution approach:) Tj
+0 -20 Td
+(• Use three pointers: prev, current, next) Tj
+0 -20 Td
+(• Time complexity: O\(n\)) Tj
+0 -20 Td
+(• Space complexity: O\(1\)) Tj
 0 -40 Td
-(Q3. Write SQL queries for the given schema.) Tj
+(Q3. [30 marks] Tree Problems) Tj
+0 -25 Td
+(a\) Implement inorder traversal of binary tree) Tj
+0 -20 Td
+(b\) Find height of binary tree) Tj
+0 -20 Td
+(c\) Check if tree is balanced) Tj
 ET
 endstream
 endobj
-5 0 obj
+6 0 obj
 <<
 /Type /Font
 /Subtype /Type1
 /BaseFont /Helvetica
 >>
 endobj
+7 0 obj
+<<
+/Length 800
+>>
+stream
+BT
+/F1 14 Tf
+50 720 Td
+(Q4. [25 marks] Graph Algorithms) Tj
+0 -30 Td
+/F1 12 Tf
+(Given an undirected graph, implement BFS and DFS traversal.) Tj
+0 -25 Td
+(Explain when to use each algorithm.) Tj
+0 -30 Td
+(BFS Applications:) Tj
+0 -20 Td
+(• Shortest path in unweighted graph) Tj
+0 -20 Td
+(• Level order traversal) Tj
+0 -20 Td
+(• Connected components) Tj
+0 -30 Td
+(DFS Applications:) Tj
+0 -20 Td
+(• Topological sorting) Tj
+0 -20 Td
+(• Cycle detection) Tj
+0 -20 Td
+(• Path finding) Tj
+0 -40 Td
+(Q5. [Bonus - 10 marks] Dynamic Programming) Tj
+0 -25 Td
+(Solve the 0/1 Knapsack problem using dynamic programming.) Tj
+0 -20 Td
+(Given: weights = [1, 3, 4, 5], values = [1, 4, 5, 7], W = 7) Tj
+0 -30 Td
+(Approach:) Tj
+0 -20 Td
+(• Create 2D DP table) Tj
+0 -20 Td
+(• dp[i][w] = maximum value with first i items and weight w) Tj
+0 -20 Td
+(• Recurrence: dp[i][w] = max\(dp[i-1][w], dp[i-1][w-wi] + vi\)) Tj
+0 -40 Td
+(Answer Key: Maximum value = 9 \(items with weights 3,4\)) Tj
+ET
+endstream
+endobj
 xref
-0 6
+0 8
 0000000000 65535 f 
 0000000010 00000 n 
 0000000053 00000 n 
-0000000125 00000 n 
-0000000348 00000 n 
-0000000744 00000 n 
+0000000115 00000 n 
+0000000268 00000 n 
+0000000421 00000 n 
+0000001372 00000 n 
+0000001439 00000 n 
 trailer
 <<
-/Size 6
+/Size 8
 /Root 1 0 R
 >>
 startxref
-837
+2290
 %%EOF

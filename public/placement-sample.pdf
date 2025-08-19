@@ -8,8 +8,8 @@ endobj
 2 0 obj
 <<
 /Type /Pages
-/Kids [3 0 R]
-/Count 1
+/Kids [3 0 R 4 0 R]
+/Count 2
 >>
 endobj
 3 0 obj
@@ -17,71 +17,168 @@ endobj
 /Type /Page
 /Parent 2 0 R
 /MediaBox [0 0 612 792]
-/Contents 4 0 R
+/Contents 5 0 R
 /Resources <<
 /Font <<
-/F1 5 0 R
+/F1 6 0 R
 >>
 >>
 >>
 endobj
 4 0 obj
 <<
-/Length 372
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 7 0 R
+/Resources <<
+/Font <<
+/F1 6 0 R
+>>
+>>
+>>
+endobj
+5 0 obj
+<<
+/Length 950
 >>
 stream
 BT
-/F1 16 Tf
+/F1 18 Tf
 50 720 Td
-(Software Engineering Interview Guide) Tj
+(Software Engineering Placement Guide) Tj
+0 -50 Td
+/F1 14 Tf
+(Complete Interview Preparation Manual) Tj
 0 -40 Td
 /F1 12 Tf
 (Chapter 1: Technical Interview Preparation) Tj
 0 -30 Td
 (1.1 Data Structures and Algorithms) Tj
+0 -25 Td
+(Essential Topics to Master:) Tj
 0 -20 Td
-(- Master arrays, linked lists, stacks, queues) Tj
+(• Arrays and Strings: Two pointers, sliding window) Tj
 0 -20 Td
-(- Understand trees, graphs, and hash tables) Tj
+(• Linked Lists: Reversal, cycle detection, merging) Tj
 0 -20 Td
-(- Practice dynamic programming and greedy algorithms) Tj
-0 -40 Td
+(• Stacks and Queues: Expression evaluation, BFS/DFS) Tj
+0 -20 Td
+(• Trees: Binary trees, BST, AVL, heap operations) Tj
+0 -20 Td
+(• Graphs: Shortest path, MST, topological sorting) Tj
+0 -20 Td
+(• Dynamic Programming: Knapsack, LCS, coin change) Tj
+0 -30 Td
 (1.2 System Design Fundamentals) Tj
+0 -25 Td
+(Key Concepts:) Tj
 0 -20 Td
-(- Learn about scalability and load balancing) Tj
+(• Scalability: Horizontal vs Vertical scaling) Tj
 0 -20 Td
-(- Understand databases and caching strategies) Tj
+(• Load Balancing: Round robin, weighted, least connections) Tj
 0 -20 Td
-(- Practice designing distributed systems) Tj
-0 -40 Td
-(1.3 Behavioral Questions) Tj
+(• Databases: SQL vs NoSQL, ACID properties, CAP theorem) Tj
 0 -20 Td
-(- Prepare STAR method examples) Tj
+(• Caching: Redis, Memcached, cache strategies) Tj
 0 -20 Td
-(- Practice leadership and teamwork scenarios) Tj
+(• Microservices: API Gateway, service discovery) Tj
+0 -30 Td
+(1.3 Programming Languages) Tj
+0 -25 Td
+(Popular Choices:) Tj
+0 -20 Td
+(• Java: Enterprise applications, Spring framework) Tj
+0 -20 Td
+(• Python: Data science, web development, automation) Tj
+0 -20 Td
+(• JavaScript: Full-stack development, Node.js, React) Tj
+0 -20 Td
+(• C++: System programming, competitive programming) Tj
 ET
 endstream
 endobj
-5 0 obj
+6 0 obj
 <<
 /Type /Font
 /Subtype /Type1
 /BaseFont /Helvetica
 >>
 endobj
+7 0 obj
+<<
+/Length 900
+>>
+stream
+BT
+/F1 14 Tf
+50 720 Td
+(Chapter 2: Behavioral Interview Preparation) Tj
+0 -30 Td
+/F1 12 Tf
+(2.1 STAR Method \(Situation, Task, Action, Result\)) Tj
+0 -25 Td
+(Common Questions and Framework:) Tj
+0 -20 Td
+(• "Tell me about a challenging project") Tj
+0 -20 Td
+(• "Describe a time you worked in a team") Tj
+0 -20 Td
+(• "How do you handle tight deadlines?") Tj
+0 -20 Td
+(• "Tell me about a time you failed") Tj
+0 -30 Td
+(2.2 Leadership and Teamwork) Tj
+0 -25 Td
+(Key Points to Highlight:) Tj
+0 -20 Td
+(• Communication skills and collaboration) Tj
+0 -20 Td
+(• Problem-solving approach) Tj
+0 -20 Td
+(• Taking initiative and ownership) Tj
+0 -20 Td
+(• Learning from mistakes and feedback) Tj
+0 -40 Td
+(Chapter 3: Company-Specific Preparation) Tj
+0 -30 Td
+(3.1 Top Tech Companies) Tj
+0 -25 Td
+(Google: Focus on algorithms, system design, Googleyness) Tj
+0 -20 Td
+(Amazon: Leadership principles, customer obsession) Tj
+0 -20 Td
+(Microsoft: Technical depth, collaboration, growth mindset) Tj
+0 -20 Td
+(Meta: Move fast, be bold, focus on impact) Tj
+0 -30 Td
+(3.2 Salary Negotiation Tips) Tj
+0 -25 Td
+(• Research market rates for your role and location) Tj
+0 -20 Td
+(• Consider total compensation package) Tj
+0 -20 Td
+(• Be prepared to justify your value) Tj
+0 -20 Td
+(• Have alternative offers for leverage) Tj
+ET
+endstream
+endobj
 xref
-0 6
+0 8
 0000000000 65535 f 
 0000000010 00000 n 
 0000000053 00000 n 
-0000000125 00000 n 
-0000000348 00000 n 
-0000000771 00000 n 
+0000000115 00000 n 
+0000000268 00000 n 
+0000000421 00000 n 
+0000001422 00000 n 
+0000001489 00000 n 
 trailer
 <<
-/Size 6
+/Size 8
 /Root 1 0 R
 >>
 startxref
-864
+2440
 %%EOF

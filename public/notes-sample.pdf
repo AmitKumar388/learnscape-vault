@@ -8,8 +8,8 @@ endobj
 2 0 obj
 <<
 /Type /Pages
-/Kids [3 0 R]
-/Count 1
+/Kids [3 0 R 4 0 R]
+/Count 2
 >>
 endobj
 3 0 obj
@@ -17,63 +17,146 @@ endobj
 /Type /Page
 /Parent 2 0 R
 /MediaBox [0 0 612 792]
-/Contents 4 0 R
+/Contents 5 0 R
 /Resources <<
 /Font <<
-/F1 5 0 R
+/F1 6 0 R
 >>
 >>
 >>
 endobj
 4 0 obj
 <<
-/Length 288
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 7 0 R
+/Resources <<
+/Font <<
+/F1 6 0 R
+>>
+>>
+>>
+endobj
+5 0 obj
+<<
+/Length 800
 >>
 stream
 BT
-/F1 16 Tf
+/F1 20 Tf
 50 720 Td
-(Data Structures and Algorithms - Complete Notes) Tj
-0 -40 Td
-/F1 12 Tf
-(Chapter 1: Arrays and Linked Lists) Tj
+(Data Structures and Algorithms - Study Notes) Tj
+0 -50 Td
+/F1 14 Tf
+(Chapter 1: Arrays and Strings) Tj
 0 -30 Td
-(1.1 Introduction to Arrays) Tj
+/F1 12 Tf
+(1.1 Array Fundamentals) Tj
+0 -25 Td
+(• Arrays store elements in contiguous memory locations) Tj
 0 -20 Td
-(Arrays are fundamental data structures that store elements) Tj
+(• Time complexity: Access O\(1\), Search O\(n\), Insert/Delete O\(n\)) Tj
 0 -20 Td
-(in contiguous memory locations. They provide O\(1\) access) Tj
-0 -20 Td
-(time for elements when the index is known.) Tj
+(• Space complexity: O\(n\)) Tj
 0 -40 Td
-(1.2 Linked Lists) Tj
+(1.2 Common Array Operations) Tj
+0 -25 Td
+(• Traversal: for\(int i = 0; i < n; i++\)) Tj
 0 -20 Td
-(Linked lists are dynamic data structures where elements) Tj
+(• Binary Search: O\(log n\) for sorted arrays) Tj
 0 -20 Td
-(are stored in nodes connected via pointers.) Tj
+(• Two Pointer Technique for pair problems) Tj
+0 -40 Td
+(1.3 Dynamic Arrays vs Static Arrays) Tj
+0 -25 Td
+(• Static: Fixed size, faster access) Tj
+0 -20 Td
+(• Dynamic: Resizable, flexible but overhead) Tj
+0 -40 Td
+(Chapter 2: Linked Lists) Tj
+0 -30 Td
+(2.1 Singly Linked List) Tj
+0 -25 Td
+(• Each node contains data and pointer to next node) Tj
+0 -20 Td
+(• Insert at beginning: O\(1\)) Tj
+0 -20 Td
+(• Insert at end: O\(n\) without tail pointer) Tj
+0 -20 Td
+(• Delete: O\(n\) for search + O\(1\) for removal) Tj
 ET
 endstream
 endobj
-5 0 obj
+6 0 obj
 <<
 /Type /Font
 /Subtype /Type1
 /BaseFont /Helvetica
 >>
 endobj
+7 0 obj
+<<
+/Length 700
+>>
+stream
+BT
+/F1 14 Tf
+50 720 Td
+(Chapter 3: Stacks and Queues) Tj
+0 -30 Td
+/F1 12 Tf
+(3.1 Stack \(LIFO - Last In First Out\)) Tj
+0 -25 Td
+(• Operations: push\(\), pop\(\), peek\(\), isEmpty\(\)) Tj
+0 -20 Td
+(• Applications: Function calls, expression evaluation) Tj
+0 -20 Td
+(• Balanced parentheses checking) Tj
+0 -40 Td
+(3.2 Queue \(FIFO - First In First Out\)) Tj
+0 -25 Td
+(• Operations: enqueue\(\), dequeue\(\), front\(\), isEmpty\(\)) Tj
+0 -20 Td
+(• Applications: BFS, task scheduling) Tj
+0 -40 Td
+(Chapter 4: Trees) Tj
+0 -30 Td
+(4.1 Binary Tree Properties) Tj
+0 -25 Td
+(• Maximum nodes at level i: 2^i) Tj
+0 -20 Td
+(• Maximum nodes in tree of height h: 2^\(h+1\) - 1) Tj
+0 -20 Td
+(• Minimum height: log2\(n+1\) - 1) Tj
+0 -40 Td
+(4.2 Tree Traversals) Tj
+0 -25 Td
+(• Inorder: Left -> Root -> Right) Tj
+0 -20 Td
+(• Preorder: Root -> Left -> Right) Tj
+0 -20 Td
+(• Postorder: Left -> Right -> Root) Tj
+0 -20 Td
+(• Level order: BFS using queue) Tj
+ET
+endstream
+endobj
 xref
-0 6
+0 8
 0000000000 65535 f 
 0000000010 00000 n 
 0000000053 00000 n 
-0000000125 00000 n 
-0000000348 00000 n 
-0000000687 00000 n 
+0000000115 00000 n 
+0000000268 00000 n 
+0000000421 00000 n 
+0000001272 00000 n 
+0000001339 00000 n 
 trailer
 <<
-/Size 6
+/Size 8
 /Root 1 0 R
 >>
 startxref
-780
+2090
 %%EOF

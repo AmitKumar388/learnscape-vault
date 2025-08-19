@@ -13,11 +13,8 @@ interface PDFViewerProps {
   onDownload: (doc: Document) => void;
 }
 
-// Set worker source for react-pdf
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.js',
-  import.meta.url
-).toString();
+// Set worker source for react-pdf using CDN
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 export const PDFViewer = ({ document, isOpen, onClose, onDownload }: PDFViewerProps) => {
   const [zoom, setZoom] = useState(100);

@@ -8,8 +8,8 @@ endobj
 2 0 obj
 <<
 /Type /Pages
-/Kids [3 0 R]
-/Count 1
+/Kids [3 0 R 4 0 R]
+/Count 2
 >>
 endobj
 3 0 obj
@@ -17,71 +17,170 @@ endobj
 /Type /Page
 /Parent 2 0 R
 /MediaBox [0 0 612 792]
-/Contents 4 0 R
+/Contents 5 0 R
 /Resources <<
 /Font <<
-/F1 5 0 R
+/F1 6 0 R
 >>
 >>
 >>
 endobj
 4 0 obj
 <<
-/Length 298
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 7 0 R
+/Resources <<
+/Font <<
+/F1 6 0 R
+>>
+>>
+>>
+endobj
+5 0 obj
+<<
+/Length 850
 >>
 stream
 BT
-/F1 16 Tf
+/F1 18 Tf
 50 720 Td
-(Python Programming Quick Reference) Tj
+(Programming Resources - Quick Reference Guide) Tj
+0 -50 Td
+/F1 14 Tf
+(Python Programming Essentials) Tj
 0 -40 Td
 /F1 12 Tf
-(Basic Syntax and Data Types) Tj
-0 -30 Td
+(1. Basic Syntax) Tj
+0 -25 Td
 (# Variables and Data Types) Tj
 0 -20 Td
-(name = "Python"  # String) Tj
+(name = "Python"    # String) Tj
 0 -20 Td
-(age = 30         # Integer) Tj
+(age = 25           # Integer) Tj
 0 -20 Td
-(pi = 3.14       # Float) Tj
+(height = 5.9       # Float) Tj
 0 -20 Td
-(is_active = True # Boolean) Tj
-0 -40 Td
-(# Lists and Dictionaries) Tj
+(is_student = True  # Boolean) Tj
+0 -30 Td
+(2. Data Structures) Tj
+0 -25 Td
+(# Lists) Tj
 0 -20 Td
 (fruits = ["apple", "banana", "orange"]) Tj
 0 -20 Td
-(student = {"name": "John", "grade": "A"}) Tj
-0 -40 Td
-(# Functions) Tj
+(fruits.append\("mango"\)    # Add element) Tj
 0 -20 Td
-(def greet\(name\):) Tj
+(fruits.remove\("banana"\)   # Remove element) Tj
+0 -30 Td
+(# Dictionaries) Tj
 0 -20 Td
-(    return f"Hello, {name}!") Tj
+(student = {"name": "John", "age": 20, "grade": "A"}) Tj
+0 -20 Td
+(print\(student["name"]\)    # Access value) Tj
+0 -30 Td
+(3. Control Structures) Tj
+0 -25 Td
+(# Conditional statements) Tj
+0 -20 Td
+(if age >= 18:) Tj
+0 -20 Td
+(    print\("Adult"\)) Tj
+0 -20 Td
+(elif age >= 13:) Tj
+0 -20 Td
+(    print\("Teenager"\)) Tj
+0 -20 Td
+(else:) Tj
+0 -20 Td
+(    print\("Child"\)) Tj
 ET
 endstream
 endobj
-5 0 obj
+6 0 obj
 <<
 /Type /Font
 /Subtype /Type1
 /BaseFont /Helvetica
 >>
 endobj
+7 0 obj
+<<
+/Length 800
+>>
+stream
+BT
+/F1 14 Tf
+50 720 Td
+(4. Functions and Classes) Tj
+0 -30 Td
+/F1 12 Tf
+(# Functions) Tj
+0 -25 Td
+(def calculate_area\(length, width\):) Tj
+0 -20 Td
+(    """Calculate area of rectangle""") Tj
+0 -20 Td
+(    return length * width) Tj
+0 -30 Td
+(# Lambda functions) Tj
+0 -20 Td
+(square = lambda x: x ** 2) Tj
+0 -20 Td
+(print\(square\(5\)\)  # Output: 25) Tj
+0 -40 Td
+(# Classes) Tj
+0 -25 Td
+(class Student:) Tj
+0 -20 Td
+(    def __init__\(self, name, age\):) Tj
+0 -20 Td
+(        self.name = name) Tj
+0 -20 Td
+(        self.age = age) Tj
+0 -30 Td
+(    def introduce\(self\):) Tj
+0 -20 Td
+(        return f"Hi, I'm {self.name}") Tj
+0 -40 Td
+(# Object creation) Tj
+0 -20 Td
+(student1 = Student\("Alice", 20\)) Tj
+0 -20 Td
+(print\(student1.introduce\(\)\)) Tj
+0 -40 Td
+(5. File Handling) Tj
+0 -25 Td
+(# Reading files) Tj
+0 -20 Td
+(with open\("data.txt", "r"\) as file:) Tj
+0 -20 Td
+(    content = file.read\(\)) Tj
+0 -30 Td
+(# Writing files) Tj
+0 -20 Td
+(with open\("output.txt", "w"\) as file:) Tj
+0 -20 Td
+(    file.write\("Hello World"\)) Tj
+ET
+endstream
+endobj
 xref
-0 6
+0 8
 0000000000 65535 f 
 0000000010 00000 n 
 0000000053 00000 n 
-0000000125 00000 n 
-0000000348 00000 n 
-0000000697 00000 n 
+0000000115 00000 n 
+0000000268 00000 n 
+0000000421 00000 n 
+0000001322 00000 n 
+0000001389 00000 n 
 trailer
 <<
-/Size 6
+/Size 8
 /Root 1 0 R
 >>
 startxref
-790
+2240
 %%EOF
