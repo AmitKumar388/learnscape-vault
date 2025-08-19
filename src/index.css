@@ -92,29 +92,29 @@ All colors MUST be HSL format for consistency.
   }
 
   .dark {
-    /* Dark Mode Education Hub Theme */
-    --background: 220 27% 4%;       /* Darker navy background */
+    /* Dark Mode Education Hub Theme - Pure Black */
+    --background: 0 0% 0%;          /* Pure black background */
     --background-secondary: 217 91% 60%; /* Bright blue accent areas */
-    --foreground: 220 9% 96%;       /* Light text */
+    --foreground: 0 0% 100%;        /* Pure white text for maximum contrast */
     
     /* Dark Glass System */
-    --glass-bg: 220 9% 12% / 0.5;   /* Dark translucent */
-    --glass-border: 0 0% 100% / 0.1; /* Subtle light border */
-    --glass-shadow: 0 0% 0% / 0.3;   /* Deeper shadow */
+    --glass-bg: 0 0% 8% / 0.8;      /* Very dark translucent */
+    --glass-border: 0 0% 100% / 0.15; /* Light border for visibility */
+    --glass-shadow: 0 0% 0% / 0.5;   /* Strong shadow */
     
-    --card: 220 27% 12% / 0.8;      /* Dark glass cards */
-    --card-foreground: 220 9% 96%;
-    --card-hover: 220 27% 15% / 0.9;
+    --card: 0 0% 5% / 0.9;          /* Very dark glass cards */
+    --card-foreground: 0 0% 98%;    /* Near white for readability */
+    --card-hover: 0 0% 10% / 0.95;  /* Slightly lighter on hover */
     
     /* Navigation in Dark Mode */
-    --nav-glass: 220 27% 12% / 0.8;
-    --nav-border: 217 91% 60% / 0.3;
+    --nav-glass: 0 0% 8% / 0.9;
+    --nav-border: 217 91% 60% / 0.4;
     
-    --popover: 220 27% 12%;
-    --popover-foreground: 220 9% 96%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
     
-    --muted: 220 27% 15%;
-    --muted-foreground: 220 9% 65%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 75%;
     
     --accent: 176 100% 39%;
     --accent-foreground: 0 0% 100%;
@@ -122,13 +122,13 @@ All colors MUST be HSL format for consistency.
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 220 27% 20%;
-    --input: 220 27% 12% / 0.8;
+    --border: 0 0% 20%;
+    --input: 0 0% 8% / 0.9;
     --ring: 217 91% 60%;
     
     /* Dark Mode Gradients */
-    --gradient-bg: linear-gradient(135deg, hsl(217 91% 60% / 0.1) 0%, hsl(262 83% 58% / 0.1) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(220 27% 12% / 0.5) 0%, hsl(220 27% 15% / 0.3) 100%);
+    --gradient-bg: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(0 0% 2%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 5% / 0.8) 0%, hsl(0 0% 8% / 0.6) 100%);
     
     /* Dark Shadows */
     --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.3);

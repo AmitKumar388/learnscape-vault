@@ -14,7 +14,10 @@ interface PDFViewerProps {
 }
 
 // Set worker source for react-pdf
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.js',
+  import.meta.url
+).toString();
 
 export const PDFViewer = ({ document, isOpen, onClose, onDownload }: PDFViewerProps) => {
   const [zoom, setZoom] = useState(100);
@@ -85,7 +88,16 @@ export const PDFViewer = ({ document, isOpen, onClose, onDownload }: PDFViewerPr
               
               <Button 
                 size="sm" 
-                onClick={() => onDownload(document)}
+                onClick={() => {
+                  // Create a link element and trigger download
+                  const link = window.document.createElement('a');
+                  link.href = `/${document.category}-sample.pdf`;
+                  link.download = `${document.title}.pdf`;
+                  window.document.body.appendChild(link);
+                  link.click();
+                  window.document.body.removeChild(link);
+                  onDownload(document);
+                }}
                 className="bg-gradient-primary hover:scale-105 transition-transform text-white"
               >
                 <Download className="w-4 h-4 mr-2" />
@@ -132,7 +144,7 @@ export const PDFViewer = ({ document, isOpen, onClose, onDownload }: PDFViewerPr
             }}
           >
             <PDFDocument
-              file={`/Amazon Sheet.pdf`} // Sample PDF for demo
+              file={`/${document.category}-sample.pdf`} // Load PDF based on category
               onLoadSuccess={onDocumentLoadSuccess}
               className="border rounded-lg shadow-card"
             >
