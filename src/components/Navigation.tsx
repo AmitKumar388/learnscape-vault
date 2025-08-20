@@ -53,10 +53,11 @@ export const Navigation = ({
             <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
               <BookOpen className="w-6 h-6 text-white" />
             </div>
-            <div>
+            <a href="/"><div>
               <h1 className="text-xl font-bold gradient-text">Education Hub</h1>
               <p className="text-xs text-muted-foreground">One Stop </p>
             </div>
+            </a>
           </motion.div>
 
           {/* Desktop Navigation */}

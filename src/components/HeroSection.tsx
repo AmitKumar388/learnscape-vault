@@ -24,11 +24,12 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 mouse-pointer">
               <span className="gradient-text">One Stop</span>
               <br />
               <span className="text-foreground">Education Hub</span>
             </h1>
+            
           </motion.div>
 
           <motion.p 
@@ -55,7 +56,7 @@ export const HeroSection = () => {
               Explore Resources
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button 
+            <a href="/categories"><Button 
               size="lg" 
               variant="outline" 
               className="glass-card hover:bg-blue-500 border-primary/30"
@@ -63,6 +64,7 @@ export const HeroSection = () => {
               <BookOpen className="mr-2 w-5 h-5" />
               Browse Categories
             </Button>
+            </a>
           </motion.div>
 
           {/* Stats Section */}

@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BookOpen, FileText, Briefcase, Download, Eye, GraduationCap } from "lucide-react";
 import { PageNavigation } from "@/components/PageNavigation";
+import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SimplePDFViewer } from "@/components/SimplePDFViewer";
 import { useState } from "react";
@@ -295,7 +296,13 @@ const Categories = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <PageNavigation />
+      <Navigation
+        onSearch={() => {}}
+        onCategoryFilter={() => {}}
+        activeCategory=""
+        isDarkMode={false}
+        toggleTheme={() => {}}
+      />
       <main className="container mx-auto px-4 py-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
