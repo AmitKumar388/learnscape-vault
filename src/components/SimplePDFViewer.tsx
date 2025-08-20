@@ -10,8 +10,8 @@ interface SimplePDFViewerProps {
   onClose: () => void;
 }
 
-// Set up the worker with correct CDN URL
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+// Set up the worker with correct CDN URL - using HTTPS
+pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
   const [zoom, setZoom] = useState(100);

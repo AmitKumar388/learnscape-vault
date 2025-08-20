@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { BookOpen, Moon, Sun } from "lucide-react";
+import { BookOpen, Moon, Sun, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -18,6 +19,8 @@ interface PageNavigationProps {
 }
 
 export const PageNavigation = ({ isDarkMode = false, toggleTheme }: PageNavigationProps) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   return (
     <motion.nav 
       initial={{ y: -100, opacity: 0 }}
@@ -86,8 +89,8 @@ export const PageNavigation = ({ isDarkMode = false, toggleTheme }: PageNavigati
             </NavigationMenu>
           </div>
 
-          {/* Theme Toggle */}
-          <div className="flex items-center space-x-4">
+          {/* Desktop Theme Toggle */}
+          <div className="hidden md:flex items-center space-x-4">
             {toggleTheme && (
               <Button
                 variant="ghost"
@@ -99,7 +102,89 @@ export const PageNavigation = ({ isDarkMode = false, toggleTheme }: PageNavigati
               </Button>
             )}
           </div>
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </Button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden mt-4 space-y-4 glass-card p-4 rounded-lg"
+          >
+            <div className="flex flex-col space-y-2">
+              <Link 
+                to="/" 
+                className="block px-3 py-2 text-foreground hover:bg-primary/10 rounded-md transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link 
+                to="/categories" 
+                className="block px-3 py-2 text-foreground hover:bg-primary/10 rounded-md transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Categories
+              </Link>
+              <Link 
+                to="/about" 
+                className="block px-3 py-2 text-foreground hover:bg-primary/10 rounded-md transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link 
+                to="/career" 
+                className="block px-3 py-2 text-foreground hover:bg-primary/10 rounded-md transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Career
+              </Link>
+              <Link 
+                to="/team" 
+                className="block px-3 py-2 text-foreground hover:bg-primary/10 rounded-md transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Team
+              </Link>
+            </div>
+
+            {/* Mobile Theme Toggle */}
+            {toggleTheme && (
+              <Button
+                variant="outline"
+                onClick={() => {
+                  toggleTheme();
+                  setIsMenuOpen(false);
+                }}
+                className="w-full justify-start"
+              >
+                {isDarkMode ? (
+                  <>
+                    <Sun className="w-4 h-4 mr-2" />
+                    Light Mode
+                  </>
+                ) : (
+                  <>
+                    <Moon className="w-4 h-4 mr-2" />
+                    Dark Mode
+                  </>
+                )}
+              </Button>
+            )}
+          </motion.div>
+        )}
       </div>
     </motion.nav>
   );
