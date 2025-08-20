@@ -267,6 +267,7 @@ const Categories = () => {
 
   const handleViewPDF = (pdfFile: string) => {
     setSelectedPDF(pdfFile);
+    
   };
 
   const handleDownload = (pdfFile: string, title: string) => {
@@ -428,7 +429,7 @@ const Categories = () => {
                 className="bg-primary hover:bg-primary/90"
                 onClick={() => {
                   const message = encodeURIComponent("Hi! I would like to request additional study materials for my engineering course. Please help me with the resources I need.");
-                  const phoneNumber = "919425169095"; // Replace with your actual WhatsApp number
+                  const phoneNumber = "9334571861"; // Replace with your actual WhatsApp number
                   window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
                 }}
               >

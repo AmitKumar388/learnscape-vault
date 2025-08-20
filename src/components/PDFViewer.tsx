@@ -1,10 +1,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Download, ZoomIn, ZoomOut, RotateCw } from "lucide-react";
-import { Document as PDFDocument, Page, pdfjs } from 'react-pdf';
+import { Document as PDFDocument, Page, pdfjs } from "react-pdf";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import type { Document } from "./DocumentCard";
+import pdfjsWorker from "pdfjs-dist/legacy/build/pdf.worker.min?url";
 
 interface PDFViewerProps {
   document: Document | null;
@@ -14,9 +20,14 @@ interface PDFViewerProps {
 }
 
 // Set worker source for react-pdf using CDN
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
-export const PDFViewer = ({ document, isOpen, onClose, onDownload }: PDFViewerProps) => {
+export const PDFViewer = ({
+  document,
+  isOpen,
+  onClose,
+  onDownload,
+}: PDFViewerProps) => {
   const [zoom, setZoom] = useState(100);
   const [rotation, setRotation] = useState(0);
   const [numPages, setNumPages] = useState<number | null>(null);
@@ -24,16 +35,17 @@ export const PDFViewer = ({ document, isOpen, onClose, onDownload }: PDFViewerPr
 
   if (!document) return null;
 
-  const handleZoomIn = () => setZoom(prev => Math.min(prev + 25, 200));
-  const handleZoomOut = () => setZoom(prev => Math.max(prev - 25, 50));
-  const handleRotate = () => setRotation(prev => (prev + 90) % 360);
-  
+  const handleZoomIn = () => setZoom((prev) => Math.min(prev + 25, 200));
+  const handleZoomOut = () => setZoom((prev) => Math.max(prev - 25, 50));
+  const handleRotate = () => setRotation((prev) => (prev + 90) % 360);
+
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages);
   };
-  
-  const goToPrevPage = () => setPageNumber(prev => Math.max(prev - 1, 1));
-  const goToNextPage = () => setPageNumber(prev => Math.min(prev + 1, numPages || 1));
+
+  const goToPrevPage = () => setPageNumber((prev) => Math.max(prev - 1, 1));
+  const goToNextPage = () =>
+    setPageNumber((prev) => Math.min(prev + 1, numPages || 1));
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -49,45 +61,45 @@ export const PDFViewer = ({ document, isOpen, onClose, onDownload }: PDFViewerPr
                 {document.category.toUpperCase()} • {document.fileSize}
               </p>
             </div>
-            
+
             {/* Controls */}
             <div className="flex items-center space-x-2">
-              <Button 
-                variant="ghost" 
-                size="sm" 
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={handleZoomOut}
                 className="glass-card hover:bg-primary/10"
               >
                 <ZoomOut className="w-4 h-4" />
               </Button>
-              
+
               <span className="text-sm font-medium px-3 py-1 bg-muted rounded-md min-w-[60px] text-center">
                 {zoom}%
               </span>
-              
-              <Button 
-                variant="ghost" 
-                size="sm" 
+
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={handleZoomIn}
                 className="glass-card hover:bg-primary/10"
               >
                 <ZoomIn className="w-4 h-4" />
               </Button>
-              
-              <Button 
-                variant="ghost" 
-                size="sm" 
+
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={handleRotate}
                 className="glass-card hover:bg-primary/10"
               >
                 <RotateCw className="w-4 h-4" />
               </Button>
-              
-              <Button 
-                size="sm" 
+
+              <Button
+                size="sm"
                 onClick={() => {
                   // Create a link element and trigger download
-                  const link = window.document.createElement('a');
+                  const link = window.document.createElement("a");
                   link.href = `/${document.category}-sample.pdf`;
                   link.download = `${document.title}.pdf`;
                   window.document.body.appendChild(link);
@@ -107,9 +119,9 @@ export const PDFViewer = ({ document, isOpen, onClose, onDownload }: PDFViewerPr
         {/* PDF Viewer Area */}
         <div className="flex-1 p-6 bg-muted/20 overflow-auto">
           <div className="flex items-center justify-center space-x-4 mb-4">
-            <Button 
-              variant="outline" 
-              size="sm" 
+            <Button
+              variant="outline"
+              size="sm"
               onClick={goToPrevPage}
               disabled={pageNumber <= 1}
               className="glass-card"
@@ -119,9 +131,9 @@ export const PDFViewer = ({ document, isOpen, onClose, onDownload }: PDFViewerPr
             <span className="text-sm font-medium">
               {pageNumber} / {numPages || 1}
             </span>
-            <Button 
-              variant="outline" 
-              size="sm" 
+            <Button
+              variant="outline"
+              size="sm"
               onClick={goToNextPage}
               disabled={pageNumber >= (numPages || 1)}
               className="glass-card"
@@ -129,15 +141,15 @@ export const PDFViewer = ({ document, isOpen, onClose, onDownload }: PDFViewerPr
               Next
             </Button>
           </div>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
             className="flex items-center justify-center"
-            style={{ 
+            style={{
               transform: `scale(${zoom / 100}) rotate(${rotation}deg)`,
-              transition: "transform 0.3s ease"
+              transition: "transform 0.3s ease",
             }}
           >
             <PDFDocument
@@ -145,8 +157,8 @@ export const PDFViewer = ({ document, isOpen, onClose, onDownload }: PDFViewerPr
               onLoadSuccess={onDocumentLoadSuccess}
               className="border rounded-lg shadow-card"
             >
-              <Page 
-                pageNumber={pageNumber} 
+              <Page
+                pageNumber={pageNumber}
                 renderTextLayer={false}
                 renderAnnotationLayer={false}
                 className="max-w-full"
@@ -158,7 +170,9 @@ export const PDFViewer = ({ document, isOpen, onClose, onDownload }: PDFViewerPr
         {/* Footer */}
         <div className="p-4 border-t border-border/50 bg-gradient-card">
           <div className="flex items-center justify-between text-sm text-muted-foreground">
-            <span>Page {pageNumber} of {numPages || 1}</span>
+            <span>
+              Page {pageNumber} of {numPages || 1}
+            </span>
             <span>Last modified: {document.uploadDate}</span>
           </div>
         </div>

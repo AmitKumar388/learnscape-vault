@@ -4,6 +4,7 @@ import { X, Download, ZoomIn, ZoomOut, RotateCw, ChevronLeft, ChevronRight } fro
 import { Document as PDFDocument, Page, pdfjs } from 'react-pdf';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import pdfjsWorker from "pdfjs-dist/legacy/build/pdf.worker.min?url";
 
 interface SimplePDFViewerProps {
   pdfUrl: string;
@@ -11,7 +12,7 @@ interface SimplePDFViewerProps {
 }
 
 // Try to avoid CORS issues by using a CDN version that supports CORS
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
   const [zoom, setZoom] = useState(100);
