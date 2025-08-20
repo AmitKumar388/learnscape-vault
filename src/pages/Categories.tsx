@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { BookOpen, FileText, Briefcase, Download, Eye, GraduationCap } from "lucide-react";
+import { BookOpen, FileText, Briefcase, Download, Eye, GraduationCap, MessageCircle } from "lucide-react";
 import { PageNavigation } from "@/components/PageNavigation";
-import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SimplePDFViewer } from "@/components/SimplePDFViewer";
-import { useState, useEffect } from "react";
+import { useTheme } from "@/components/theme-provider";
+import { useState } from "react";
 
 interface Material {
   id: string;
@@ -258,23 +258,11 @@ const engineeringSemesters: Semester[] = [
 
 const Categories = () => {
   const [selectedPDF, setSelectedPDF] = useState<string | null>(null);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { theme, setTheme } = useTheme();
 
-  useEffect(() => {
-    // Check for saved theme preference or default to 'light'
-    const savedTheme = localStorage.getItem('theme');
-    const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const shouldUseDark = savedTheme === 'dark' || (!savedTheme && systemPreference);
-    
-    setIsDarkMode(shouldUseDark);
-    document.documentElement.classList.toggle('dark', shouldUseDark);
-  }, []);
-
+  const isDarkMode = theme === 'dark';
   const toggleTheme = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    document.documentElement.classList.toggle('dark', newMode);
-    localStorage.setItem('theme', newMode ? 'dark' : 'light');
+    setTheme(isDarkMode ? 'light' : 'dark');
   };
 
   const handleViewPDF = (pdfFile: string) => {
@@ -314,13 +302,7 @@ const Categories = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation
-        onSearch={() => {}}
-        onCategoryFilter={() => {}}
-        activeCategory=""
-        isDarkMode={false}
-        toggleTheme={() => {}}
-      />
+      <PageNavigation isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <main className="container mx-auto px-4 py-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -442,8 +424,16 @@ const Categories = () => {
               <p className="text-muted-foreground mb-6">
                 Can't find what you're looking for? Contact us for specific study materials or suggest new content.
               </p>
-              <Button className="bg-primary hover:bg-primary/90">
-                Request Materials
+              <Button 
+                className="bg-primary hover:bg-primary/90"
+                onClick={() => {
+                  const message = encodeURIComponent("Hi! I would like to request additional study materials for my engineering course. Please help me with the resources I need.");
+                  const phoneNumber = "919425169095"; // Replace with your actual WhatsApp number
+                  window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+                }}
+              >
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Contact via WhatsApp
               </Button>
             </CardContent>
           </Card>

@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { X, Download, ZoomIn, ZoomOut, RotateCw } from "lucide-react";
+import { X, Download, ZoomIn, ZoomOut, RotateCw, ChevronLeft, ChevronRight } from "lucide-react";
 import { Document as PDFDocument, Page, pdfjs } from 'react-pdf';
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 interface SimplePDFViewerProps {
   pdfUrl: string;
   onClose: () => void;
 }
 
-// Set up the worker with correct CDN URL - using HTTPS
-pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+// Try to avoid CORS issues by using a CDN version that supports CORS
+pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
   const [zoom, setZoom] = useState(100);
@@ -51,16 +51,16 @@ export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
   return (
     <Dialog open={true} onOpenChange={onClose}>
       <DialogContent className="max-w-7xl h-[90vh] glass border-border/50 p-0">
+        <DialogHeader className="sr-only">
+          <DialogTitle>Document Viewer</DialogTitle>
+          <DialogDescription>PDF Document Viewer with zoom and navigation controls</DialogDescription>
+        </DialogHeader>
         {/* Header */}
-        <DialogHeader className="p-6 border-b border-border/50 bg-gradient-card">
+        <div className="p-6 border-b border-border/50 bg-gradient-card">
           <div className="flex items-center justify-between">
             <div>
-              <DialogTitle className="text-xl font-semibold">
-                Document Viewer
-              </DialogTitle>
-              <p className="text-sm text-muted-foreground mt-1">
-                PDF Document
-              </p>
+              <h2 className="text-xl font-semibold">Document Viewer</h2>
+              <p className="text-sm text-muted-foreground mt-1">PDF Document</p>
             </div>
             
             {/* Controls */}
@@ -115,7 +115,7 @@ export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
               </Button>
             </div>
           </div>
-        </DialogHeader>
+        </div>
 
         {/* PDF Viewer Area */}
         <div className="flex-1 p-6 bg-muted/20 overflow-auto">
@@ -141,7 +141,7 @@ export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
 
           {!isLoading && !error && (
             <>
-              <div className="flex items-center justify-center space-x-4 mb-4">
+              <div className="flex items-center space-x-4 mb-4">
                 <Button 
                   variant="outline" 
                   size="sm" 
@@ -149,6 +149,7 @@ export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
                   disabled={pageNumber <= 1}
                   className="glass-card"
                 >
+                  <ChevronLeft className="w-4 h-4 mr-1" />
                   Previous
                 </Button>
                 <span className="text-sm font-medium">
@@ -162,6 +163,7 @@ export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
                   className="glass-card"
                 >
                   Next
+                  <ChevronRight className="w-4 h-4 ml-1" />
                 </Button>
               </div>
               
