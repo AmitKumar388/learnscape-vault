@@ -6,7 +6,7 @@ import { BookOpen, FileText, Briefcase, Download, Eye, GraduationCap } from "luc
 import { PageNavigation } from "@/components/PageNavigation";
 import { Footer } from "@/components/Footer";
 import { SimplePDFViewer } from "@/components/SimplePDFViewer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface Material {
   id: string;
@@ -257,6 +257,24 @@ const engineeringSemesters: Semester[] = [
 
 const Categories = () => {
   const [selectedPDF, setSelectedPDF] = useState<string | null>(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Check for saved theme preference or default to 'light'
+    const savedTheme = localStorage.getItem('theme');
+    const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const shouldUseDark = savedTheme === 'dark' || (!savedTheme && systemPreference);
+    
+    setIsDarkMode(shouldUseDark);
+    document.documentElement.classList.toggle('dark', shouldUseDark);
+  }, []);
+
+  const toggleTheme = () => {
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    document.documentElement.classList.toggle('dark', newMode);
+    localStorage.setItem('theme', newMode ? 'dark' : 'light');
+  };
 
   const handleViewPDF = (pdfFile: string) => {
     setSelectedPDF(pdfFile);
@@ -282,10 +300,10 @@ const Categories = () => {
 
   const getTypeColor = (type: string) => {
     switch (type) {
-      case 'notes': return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300';
-      case 'pyqs': return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300';  
-      case 'placement': return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300';
-      default: return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300';
+      case 'notes': return 'bg-primary/10 text-primary border-primary/20';
+      case 'pyqs': return 'bg-secondary/10 text-secondary border-secondary/20';  
+      case 'placement': return 'bg-accent/10 text-accent border-accent/20';
+      default: return 'bg-muted/50 text-muted-foreground border-border';
     }
   };
 
@@ -294,8 +312,8 @@ const Categories = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <PageNavigation />
+    <div className="min-h-screen">
+      <PageNavigation isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <main className="container mx-auto px-4 py-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
