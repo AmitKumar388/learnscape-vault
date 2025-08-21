@@ -64,36 +64,7 @@ export const PDFViewer = ({
 
             {/* Controls */}
             <div className="flex items-center space-x-2">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={handleZoomOut}
-                className="glass-card hover:bg-primary/10"
-              >
-                <ZoomOut className="w-4 h-4" />
-              </Button>
-
-              <span className="text-sm font-medium px-3 py-1 bg-muted rounded-md min-w-[60px] text-center">
-                {zoom}%
-              </span>
-
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={handleZoomIn}
-                className="glass-card hover:bg-primary/10"
-              >
-                <ZoomIn className="w-4 h-4" />
-              </Button>
-
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={handleRotate}
-                className="glass-card hover:bg-primary/10"
-              >
-                <RotateCw className="w-4 h-4" />
-              </Button>
+             
 
               <Button
                 size="sm"
@@ -107,7 +78,7 @@ export const PDFViewer = ({
                   window.document.body.removeChild(link);
                   onDownload(document);
                 }}
-                className="bg-gradient-primary hover:scale-105 transition-transform text-white"
+                className="bg-gradient-primary hover:scale-105 transition-transform text-white mr-5"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Download

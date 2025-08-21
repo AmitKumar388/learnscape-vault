@@ -265,11 +265,6 @@ const Categories = () => {
     setTheme(isDarkMode ? 'light' : 'dark');
   };
 
-  const handleViewPDF = (pdfFile: string) => {
-    setSelectedPDF(pdfFile);
-    
-  };
-
   const handleDownload = (pdfFile: string, title: string) => {
     const link = document.createElement('a');
     link.href = `/${pdfFile}`;
