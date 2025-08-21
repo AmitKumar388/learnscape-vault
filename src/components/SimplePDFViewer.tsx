@@ -4,26 +4,25 @@ import { X, Download, ZoomIn, ZoomOut, RotateCw, ChevronLeft, ChevronRight } fro
 import { Document as PDFDocument, Page, pdfjs } from 'react-pdf';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import pdfjsWorker from "pdfjs-dist/legacy/build/pdf.worker.min?url";
 
 interface SimplePDFViewerProps {
   pdfUrl: string;
   onClose: () => void;
 }
 
-// Try to avoid CORS issues by using a CDN version that supports CORS
-pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+// Use the worker from public folder
+pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js';
 
 export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
-  const [zoom, setZoom] = useState(100);
+  const [zoom, setZoom] = useState(1.0); // Changed to decimal for scale prop
   const [rotation, setRotation] = useState(0);
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const handleZoomIn = () => setZoom(prev => Math.min(prev + 25, 200));
-  const handleZoomOut = () => setZoom(prev => Math.max(prev - 25, 50));
+  const handleZoomIn = () => setZoom(prev => Math.min(prev + 0.25, 2.0));
+  const handleZoomOut = () => setZoom(prev => Math.max(prev - 0.25, 0.5));
   const handleRotate = () => setRotation(prev => (prev + 90) % 360);
   
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
@@ -33,6 +32,7 @@ export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
   };
 
   const onDocumentLoadError = (error: Error) => {
+    console.error('PDF Load Error:', error);
     setError(`Failed to load PDF: ${error.message}`);
     setIsLoading(false);
   };
@@ -76,7 +76,7 @@ export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
               </Button>
               
               <span className="text-sm font-medium px-3 py-1 bg-muted rounded-md min-w-[60px] text-center">
-                {zoom}%
+                {Math.round(zoom * 100)}%
               </span>
               
               <Button 
@@ -174,7 +174,7 @@ export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
                 transition={{ duration: 0.3 }}
                 className="flex items-center justify-center"
                 style={{ 
-                  transform: `scale(${zoom / 100}) rotate(${rotation}deg)`,
+                  transform: `rotate(${rotation}deg)`,
                   transition: "transform 0.3s ease"
                 }}
               >
@@ -186,6 +186,7 @@ export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
                 >
                   <Page 
                     pageNumber={pageNumber} 
+                    scale={zoom}
                     renderTextLayer={false}
                     renderAnnotationLayer={false}
                     className="max-w-full"
