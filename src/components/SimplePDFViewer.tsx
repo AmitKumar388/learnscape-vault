@@ -4,15 +4,13 @@ import { X, Download, ZoomIn, ZoomOut, RotateCw, ChevronLeft, ChevronRight } fro
 import { Document as PDFDocument, Page, pdfjs } from 'react-pdf';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import pdfjsWorker from "pdfjs-dist/legacy/build/pdf.worker.min?url";
-
 interface SimplePDFViewerProps {
   pdfUrl: string;
   onClose: () => void;
 }
 
-// Try to avoid CORS issues by using a CDN version that supports CORS
-pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+// Set worker source to use the bundled worker
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js`;
 
 export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
   const [zoom, setZoom] = useState(100);
@@ -33,6 +31,7 @@ export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
   };
 
   const onDocumentLoadError = (error: Error) => {
+    console.error('PDF Load Error:', error);
     setError(`Failed to load PDF: ${error.message}`);
     setIsLoading(false);
   };
@@ -182,6 +181,16 @@ export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
                   file={pdfUrl}
                   onLoadSuccess={onDocumentLoadSuccess}
                   onLoadError={onDocumentLoadError}
+                  loading={
+                    <div className="flex items-center justify-center p-8">
+                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                    </div>
+                  }
+                  error={
+                    <div className="flex items-center justify-center p-8">
+                      <p className="text-destructive">Error loading PDF</p>
+                    </div>
+                  }
                   className="border rounded-lg shadow-card"
                 >
                   <Page 
