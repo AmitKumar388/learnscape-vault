@@ -56,7 +56,8 @@ export const HeroSection = () => {
               Explore Resources
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <a href="/categories"><Button 
+            <a href="/categories">
+            <Button 
               size="lg" 
               variant="outline" 
               className="glass-card hover:bg-blue-500 border-primary/30"
