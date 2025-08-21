@@ -380,7 +380,7 @@ const Categories = () => {
                                 <Button
                                   variant="outline"
                                   size="sm"
-                                  onClick={() => handleViewPDF(material.pdfFile)}
+                                  onClick={() => window.open(`/${material.pdfFile}`, "_blank")}
                                   className="flex-1 group-hover:border-primary/50"
                                 >
                                   <Eye className="h-4 w-4 mr-2" />
