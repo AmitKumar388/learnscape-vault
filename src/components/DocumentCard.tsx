@@ -121,8 +121,13 @@ export const DocumentCard = ({ document, onView, onDownload, index }: DocumentCa
             size="sm" 
             variant="ghost"
             onClick={(e) => {
-              e.stopPropagation();
-              onDownload(document);
+              const link = window.document.createElement("a");
+                  link.href = `/${document.category}-sample.pdf`;
+                  link.download = `${document.title}.pdf`;
+                  window.document.body.appendChild(link);
+                  link.click();
+                  window.document.body.removeChild(link);
+                  onDownload(document);
             }}
             className="opacity-0 group-hover:opacity-100 transition-opacity"
           >

@@ -40,7 +40,6 @@ const Index = () => {
     });
   };
 
-  // Filter documents based on search and category
   const filteredDocuments = useMemo(() => {
     return mockDocuments.filter((doc) => {
       const matchesCategory = activeCategory === "all" || doc.category === activeCategory;

@@ -28,82 +28,45 @@ const Team = () => {
 
   const leadership = [
     {
-      name: "Dr. Sarah Chen",
-      role: "Chief Executive Officer",
-      location: "San Francisco, CA",
-      bio: "Former Head of Education Technology at Google. PhD in Computer Science from Stanford. Passionate about democratizing access to quality education through innovative technology solutions.",
-      achievements: ["Forbes 30 Under 30", "EdTech Pioneer Award 2023", "TED Speaker"],
+      name: "Alok Harsh",
+      role: "Co-Founder",
+      location: "Indore, Madhya Pradesh",
+      bio: "Full-stack engineer with 3+ years experience building scalable platforms. Frontend Developer experience of at Spotify. Leads our technical vision and engineering excellence initiatives.",
+      achievements: ["AWS Cloud Foundation Solutions Architect", "Open Source Contributor", "Tech Speaker"],
       social: {
-        linkedin: "https://linkedin.com/in/sarahchen",
-        twitter: "https://twitter.com/sarahchen",
-        email: "sarah@learnscape.edu"
+        linkedin: "https://www.linkedin.com/in/alok-harsh-73b36425a/",
+        github: "#",
+        email: ""
       }
     },
     {
-      name: "Michael Rodriguez",
-      role: "Chief Technology Officer",
-      location: "Austin, TX",
-      bio: "Full-stack engineer with 15+ years experience building scalable platforms. Former Principal Engineer at Spotify. Leads our technical vision and engineering excellence initiatives.",
-      achievements: ["AWS Solutions Architect", "Open Source Contributor", "Tech Conference Speaker"],
+      name: "Amit Kumar",
+      role: "Founder & Chief Executive Officer",
+      location: "Indore, Madhya Pradesh",
+      bio: "Former Head and Founder of Education Hub and SmartApply.AI. B.Tech in Computer Science and Engineering from IIST. Passionate about democratizing access to quality education through innovative technology solutions.",
+      achievements: ["Problem Solver & Founder", "Internal Hacakathon Winner", "Speaker & Leadership"],
       social: {
-        linkedin: "https://linkedin.com/in/mrodriguez",
-        github: "https://github.com/mrodriguez",
-        email: "michael@learnscape.edu"
+        linkedin: "https://www.linkedin.com/in/amitkumar-developer/",
+        github: "https://github.com/AmitKumar388",
+        email: "amitkumarhzb75@gmail.com"
       }
     },
+    
     {
-      name: "Dr. Priya Patel",
-      role: "Chief Learning Officer",
-      location: "Boston, MA",
-      bio: "Educational psychologist and former Dean of Digital Learning at MIT. Specializes in learning sciences and adaptive educational technologies. 20+ years in academic leadership.",
-      achievements: ["MIT Excellence in Teaching", "Learning Sciences Research Award", "Author of 50+ Papers"],
+      name: "Ansh Nimbhore",
+      role: "CTO & Co-Founder",
+      location: "Bhopal, Madhya Pradesh",
+      bio: "Education from Computer Science and Engineering. Specializes in learning sciences and adaptive educational technologies. 20+ years in academic leadership.",
+      achievements: ["Excellence in Learning", "UI/UX Designer", "Experience of 2+ years"],
       social: {
-        linkedin: "https://linkedin.com/in/priyapatel",
-        twitter: "https://twitter.com/drpriyapatel",
-        email: "priya@learnscape.edu"
+        linkedin: "https://www.linkedin.com/in/ansh-nimbhore-55aa55257/",
+        github: "#",
+        email: ""
       }
     }
   ];
 
-  const departments = [
-    {
-      name: "Engineering",
-      count: 25,
-      description: "Building robust, scalable platforms that serve millions of students worldwide",
-      color: "from-blue-500 to-purple-600"
-    },
-    {
-      name: "Design",
-      count: 12,
-      description: "Creating intuitive, accessible, and beautiful learning experiences",
-      color: "from-pink-500 to-red-500"
-    },
-    {
-      name: "Content",
-      count: 18,
-      description: "Curating and creating high-quality educational materials and resources",
-      color: "from-green-500 to-teal-500"
-    },
-    {
-      name: "Data Science",
-      count: 8,
-      description: "Leveraging data insights to improve learning outcomes and platform performance",
-      color: "from-orange-500 to-yellow-500"
-    },
-    {
-      name: "Marketing",
-      count: 15,
-      description: "Connecting with students and educators to grow our global community",
-      color: "from-indigo-500 to-purple-500"
-    },
-    {
-      name: "Operations",
-      count: 10,
-      description: "Ensuring smooth operations and exceptional support for our users",
-      color: "from-gray-500 to-gray-700"
-    }
-  ];
-
+  
   const values = [
     "Student-First Mindset",
     "Innovation & Excellence",
@@ -141,15 +104,15 @@ const Team = () => {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="glass-card p-4 rounded-xl text-center">
-                <div className="text-3xl font-bold gradient-text">88+</div>
+                <div className="text-3xl font-bold gradient-text">8+</div>
                 <div className="text-sm text-muted-foreground">Team Members</div>
               </div>
               <div className="glass-card p-4 rounded-xl text-center">
-                <div className="text-3xl font-bold gradient-text">15+</div>
+                <div className="text-3xl font-bold gradient-text">1</div>
                 <div className="text-sm text-muted-foreground">Countries</div>
               </div>
               <div className="glass-card p-4 rounded-xl text-center">
-                <div className="text-3xl font-bold gradient-text">6</div>
+                <div className="text-3xl font-bold gradient-text">3</div>
                 <div className="text-sm text-muted-foreground">Departments</div>
               </div>
               <div className="glass-card p-4 rounded-xl text-center">
@@ -223,11 +186,6 @@ const Team = () => {
                       <Linkedin className="w-4 h-4" />
                     </Button>
                   )}
-                  {leader.social.twitter && (
-                    <Button variant="ghost" size="icon" className="glass-card hover:bg-primary/10">
-                      <Twitter className="w-4 h-4" />
-                    </Button>
-                  )}
                   {leader.social.github && (
                     <Button variant="ghost" size="icon" className="glass-card hover:bg-primary/10">
                       <Github className="w-4 h-4" />
@@ -237,53 +195,6 @@ const Team = () => {
                     <Mail className="w-4 h-4" />
                   </Button>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Departments */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our <span className="gradient-text">Departments</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Each team brings unique expertise to create exceptional educational experiences
-            </p>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {departments.map((dept, index) => (
-              <motion.div
-                key={dept.name}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="glass-card p-8 rounded-xl group hover:scale-105 transition-all"
-              >
-                <div className="text-center mb-4">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${dept.color} rounded-xl mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold group-hover:animate-glow`}>
-                    {dept.count}
-                  </div>
-                  <h3 className="text-xl font-bold">{dept.name}</h3>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    {dept.count} team members
-                  </p>
-                </div>
-                
-                <p className="text-sm text-muted-foreground leading-relaxed text-center">
-                  {dept.description}
-                </p>
               </motion.div>
             ))}
           </div>

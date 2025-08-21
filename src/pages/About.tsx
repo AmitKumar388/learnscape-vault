@@ -75,7 +75,7 @@ const About = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              About <span className="gradient-text">LearnScape</span>
+              About <span className="gradient-text">Education Hub</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               We're passionate about transforming education through technology, making quality learning 
@@ -141,7 +141,7 @@ const About = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose <span className="gradient-text">LearnScape?</span>
+              Why Choose <span className="gradient-text">Education Hub?</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We combine cutting-edge technology with proven educational methodologies 

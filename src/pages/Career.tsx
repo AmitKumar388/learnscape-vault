@@ -31,38 +31,29 @@ const Career = () => {
     {
       title: "Senior Frontend Developer",
       department: "Engineering",
-      location: "Remote / San Francisco",
+      location: "Remote / Indore",
       type: "Full-time",
-      experience: "3-5 years",
+      experience: "0-1 years",
       skills: ["React", "TypeScript", "Tailwind CSS", "Node.js"],
       description: "Join our engineering team to build the next generation of educational technology platforms."
     },
     {
       title: "UX/UI Designer",
       department: "Design",
-      location: "Remote / New York",
+      location: "Remote / Bhopal",
       type: "Full-time",
-      experience: "2-4 years",
+      experience: "1-4 years",
       skills: ["Figma", "User Research", "Prototyping", "Design Systems"],
       description: "Create intuitive and engaging user experiences for millions of students worldwide."
     },
     {
       title: "Content Strategist",
       department: "Content",
-      location: "Remote / Austin",
+      location: "Remote / WFH",
       type: "Full-time",
       experience: "2-3 years",
       skills: ["Content Writing", "SEO", "Educational Design", "Analytics"],
       description: "Develop comprehensive content strategies to enhance student learning outcomes."
-    },
-    {
-      title: "Data Scientist",
-      department: "Analytics",
-      location: "Remote / Boston",
-      type: "Full-time",
-      experience: "3-6 years",
-      skills: ["Python", "Machine Learning", "SQL", "Tableau"],
-      description: "Leverage data insights to improve educational experiences and student success rates."
     }
   ];
 
@@ -73,7 +64,7 @@ const Career = () => {
     },
     {
       title: "Professional Development",
-      description: "$5,000 annual learning budget for courses and conferences"
+      description: "Professional learning budget for courses and conferences"
     },
     {
       title: "Health & Wellness",
@@ -87,7 +78,7 @@ const Career = () => {
 
   const handleApply = (jobTitle: string) => {
     toast({
-      title: "Application Started",
+      title: "Application Started soon...",
       description: `Redirecting to application form for ${jobTitle}`,
     });
   };
@@ -121,7 +112,7 @@ const Career = () => {
             <div className="flex flex-wrap justify-center gap-4">
               <div className="flex items-center space-x-2 glass-card px-4 py-2 rounded-full">
                 <Users className="w-5 h-5 text-primary" />
-                <span className="text-sm font-medium">100+ Team Members</span>
+                <span className="text-sm font-medium">10+ Team Members</span>
               </div>
               <div className="flex items-center space-x-2 glass-card px-4 py-2 rounded-full">
                 <Star className="w-5 h-5 text-primary" />
@@ -282,7 +273,7 @@ const Career = () => {
               className="bg-gradient-primary text-white hover:scale-105 transition-transform"
               onClick={() => {
                 toast({
-                  title: "Contact Form",
+                  title: "Contact Form coming soon...",
                   description: "Redirecting to general application form",
                 });
               }}
