@@ -4,13 +4,15 @@ import { X, Download, ZoomIn, ZoomOut, RotateCw, ChevronLeft, ChevronRight } fro
 import { Document as PDFDocument, Page, pdfjs } from 'react-pdf';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import pdfjsWorker from "pdfjs-dist/legacy/build/pdf.worker.min?url";
+
 interface SimplePDFViewerProps {
   pdfUrl: string;
   onClose: () => void;
 }
 
-// Set worker source to use the bundled worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js`;
+// Try to avoid CORS issues by using a CDN version that supports CORS
+pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
   const [zoom, setZoom] = useState(100);
@@ -31,7 +33,6 @@ export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
   };
 
   const onDocumentLoadError = (error: Error) => {
-    console.error('PDF Load Error:', error);
     setError(`Failed to load PDF: ${error.message}`);
     setIsLoading(false);
   };
@@ -173,7 +174,7 @@ export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
                 transition={{ duration: 0.3 }}
                 className="flex items-center justify-center"
                 style={{ 
-                  transform: `rotate(${rotation}deg)`,
+                  transform: `scale(${zoom / 100}) rotate(${rotation}deg)`,
                   transition: "transform 0.3s ease"
                 }}
               >
@@ -181,21 +182,10 @@ export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
                   file={pdfUrl}
                   onLoadSuccess={onDocumentLoadSuccess}
                   onLoadError={onDocumentLoadError}
-                  loading={
-                    <div className="flex items-center justify-center p-8">
-                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-                    </div>
-                  }
-                  error={
-                    <div className="flex items-center justify-center p-8">
-                      <p className="text-destructive">Error loading PDF</p>
-                    </div>
-                  }
                   className="border rounded-lg shadow-card"
                 >
                   <Page 
-                    pageNumber={pageNumber}
-                    scale={zoom / 100}
+                    pageNumber={pageNumber} 
                     renderTextLayer={false}
                     renderAnnotationLayer={false}
                     className="max-w-full"
