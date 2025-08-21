@@ -174,7 +174,7 @@ export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
                 transition={{ duration: 0.3 }}
                 className="flex items-center justify-center"
                 style={{ 
-                  transform: `scale(${zoom / 100}) rotate(${rotation}deg)`,
+                  transform: `rotate(${rotation}deg)`,
                   transition: "transform 0.3s ease"
                 }}
               >
@@ -185,7 +185,8 @@ export const SimplePDFViewer = ({ pdfUrl, onClose }: SimplePDFViewerProps) => {
                   className="border rounded-lg shadow-card"
                 >
                   <Page 
-                    pageNumber={pageNumber} 
+                    pageNumber={pageNumber}
+                    scale={zoom / 100}
                     renderTextLayer={false}
                     renderAnnotationLayer={false}
                     className="max-w-full"
